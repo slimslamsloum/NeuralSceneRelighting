@@ -1,6 +1,6 @@
 # NeuralSceneRelighting
 
-This repositery contains work related to my Bachelor Project at EPFL. Please find below indications on where to find what deliverables.
+This repositery contains work related to my Bachelor Project at EPFL's Image and Visual Representation Lab. Please find below indications on where to find what deliverables.
 
 ## Report 
 
