@@ -1,0 +1,1 @@
+../exps/default-kitty/2022_12_13_19_12_22/checkpoints/ModelParameters/latest.pth

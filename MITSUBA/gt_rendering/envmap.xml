@@ -1,0 +1,43 @@
+<scene version='3.0.0'>
+
+    <!-- .. scene contents .. -->
+
+    <!-- .. integrator .. -->
+    <integrator type="path">
+        <!-- .. value: how many times max amount of bouncing of ray before reaching sensor .. -->
+        <integer name="max_depth" value="8"/>
+    </integrator>
+
+
+    <!-- .. environment map .. -->
+    <emitter type="envmap">
+        <string name="filename" value="../envmaps/envmap1.exr"/>
+    </emitter>
+
+    <sensor type="perspective">
+
+        <float name="fov" value="90"/>
+        <transform name="to_world">
+            <!-- Move and rotate the camera so that looks from (1, 1, 1) to (0, 0, 0)
+                and the direction (0, 1, 0) points "up" in the output image -->
+            <lookat origin="1, 1, 1" target="0, 0, 0" up="0, 1, 0"/>
+        </transform>
+
+         <!-- Write to a high dynamic range EXR image -->
+        <film type="hdrfilm">
+            <!-- Specify the desired resolution (e.g. full HD) -->
+            <integer name="width" value="512"/>
+            <integer name="height" value="512"/>
+
+            <!-- Use a Gaussian reconstruction filter. -->
+            <rfilter type="gaussian"/>
+        </film>
+        
+
+    </sensor>  
+
+
+ 
+
+</scene>
+

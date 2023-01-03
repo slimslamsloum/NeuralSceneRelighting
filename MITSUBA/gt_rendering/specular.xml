@@ -1,0 +1,44 @@
+<scene version='3.0.0'>
+    <default name="spp" value="256"/>
+    <default name="res" value="256"/>
+
+    <integrator type='direct'/>
+
+     <sensor type="perspective">
+
+        <float name="fov" value="35"/>
+        <transform name="to_world">
+            <lookat origin="-0.31247726,  2.2215471, -0.76849145" target="0, 0, 0" up="0, 1, 0"/>
+
+        </transform>
+
+
+         <!-- Write to a high dynamic range EXR image -->
+        <film type="hdrfilm">
+            <!-- Specify the desired resolution (e.g. full HD) -->
+            <integer name="width" value="512"/>
+            <integer name="height" value="512"/>
+
+            <!-- Use a Gaussian reconstruction filter. -->
+            <rfilter type="gaussian"/>
+        </film>
+        
+
+    </sensor>  
+
+
+    <!-- .. mesh of hello kitty .. -->
+    <shape type="obj">
+        <string name="filename" value="kitty/mesh_norm.obj"/>
+        <bsdf type="roughconductor">
+            
+            <rgb name="specular_reflectance" value="0.3"/>
+            <float name="alpha" value="0.05"/>
+        </bsdf>
+    </shape>
+
+    <emitter type="envmap">
+        <string name="filename" value="../envmaps/envmap1.exr"/>
+    </emitter>
+
+</scene>
