@@ -1,0 +1,1 @@
+../exps/default-duck/2023_01_03_22_37_02/checkpoints/ModelParameters/latest.pth
